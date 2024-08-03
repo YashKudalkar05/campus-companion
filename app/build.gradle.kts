@@ -41,7 +41,7 @@ dependencies {
     implementation("com.google.android.gms:play-services-maps:18.0.2")
     implementation("com.google.firebase:firebase-auth:21.0.1")
     implementation("com.google.firebase:firebase-database:20.0.4")
-
+    implementation("com.google.firebase:firebase-firestore-ktx:24.0.0")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

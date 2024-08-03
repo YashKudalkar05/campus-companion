@@ -1,18 +1,50 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!-- res/layout/activity_events.xml -->
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:padding="16dp">
 
+    <EditText
+        android:id="@+id/titleEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Event Title" />
+
+    <EditText
+        android:id="@+id/descriptionEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Event Description" />
+
+    <EditText
+        android:id="@+id/dateEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Event Date" />
+
+    <EditText
+        android:id="@+id/timeEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Event Time" />
+
+    <EditText
+        android:id="@+id/locationEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Event Location" />
+
     <Button
-        android:id="@+id/post_event_button"
+        android:id="@+id/postButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Post Event" />
 
-    <ListView
-        android:id="@+id/events_list_view"
+    <RecyclerView
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-</LinearLayout>
+        android:layout_height="match_parent"
+        android:layout_below="@id/postButton"
+        android:layout_marginTop="16dp" />
+</RelativeLayout>
