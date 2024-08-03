@@ -2,6 +2,7 @@ package com.example.project
 
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -39,17 +40,22 @@ class EventsActivity : AppCompatActivity() {
         val adapter = EventAdapter()
         recyclerView.adapter = adapter
 
-        // Fetch and display events from Firestore
         firestore.collection("events")
             .addSnapshotListener { snapshot, e ->
                 if (e != null) {
-                    Toast.makeText(this, "Failed to load events", Toast.LENGTH_SHORT).show()
+                    Log.e("EventsActivity", "Failed to load events", e)  // Log the error
+                    Toast.makeText(this, "Failed to load events: ${e.message}", Toast.LENGTH_SHORT).show()
                     return@addSnapshotListener
                 }
 
-                val events = snapshot?.documents?.mapNotNull { it.toObject(Event::class.java) } ?: emptyList()
-                adapter.submitList(events)
+                if (snapshot != null) {
+                    val events = snapshot.documents.mapNotNull { it.toObject(Event::class.java) }
+                    adapter.submitList(events)
+                } else {
+                    Toast.makeText(this, "No events found", Toast.LENGTH_SHORT).show()
+                }
             }
+
     }
 
     private fun postEvent() {
