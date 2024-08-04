@@ -1,51 +1,25 @@
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    tools:context=".MainActivity">
+    android:orientation="vertical"
+    android:padding="16dp">
 
     <Button
         android:id="@+id/events_button"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="View Events"
-        android:drawableLeft="@drawable/ic_event"
-        android:drawablePadding="8dp"
-        style="@style/Widget.AppTheme.Button"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/study_groups_button"
-        android:layout_marginBottom="16dp"/>
+        android:text="View Events" />
 
     <Button
         android:id="@+id/study_groups_button"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Study Groups"
-        android:drawableLeft="@drawable/ic_study_group"
-        android:drawablePadding="8dp"
-        style="@style/Widget.AppTheme.Button"
-        app:layout_constraintTop_toBottomOf="@+id/events_button"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/navigation_button"
-        android:layout_marginBottom="16dp"/>
+        android:text="Study Groups" />
 
     <Button
         android:id="@+id/navigation_button"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Campus Navigation"
-        android:drawableLeft="@drawable/ic_navigation"
-        android:drawablePadding="8dp"
-        style="@style/Widget.AppTheme.Button"
-        app:layout_constraintTop_toBottomOf="@+id/study_groups_button"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:text="Campus Navigation" />
+</LinearLayout>
